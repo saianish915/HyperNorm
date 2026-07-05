@@ -103,18 +103,18 @@ def build_dataset(tickers, start, end):
 
 def main():
     print("Tech Stock Dataset Builder")
-    print(f"Tickers : {', '.join(TICKERS)}")
-    print(f"Period  : {START_DATE} to {END_DATE}")
+    print(f"Tickers : {', '.join(Tickers)}")
+    print(f"Period  : {Start_Date} to {End_Date}")
     print()
 
-    dataset = build_dataset(TICKERS, START_DATE, END_DATE)
+    dataset = build_dataset(Tickers, Start_Date, End_Date)
 
     if dataset.empty:
         return
 
-    dataset.to_csv(OUTPUT_FILE, index=False)
+    dataset.to_csv(Output_File, index=False)
 
-    print(f"\nDataset saved to {OUTPUT_FILE}")
+    print(f"\nDataset saved to {Output_File}")
     print(f"Shape: {dataset.shape[0]} rows x {dataset.shape[1]} columns")
     print(f"\nColumns:")
     for col in dataset.columns:
